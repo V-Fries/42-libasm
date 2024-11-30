@@ -16,7 +16,7 @@ all:	$(NAME)
 
 .PHONY: test
 test:	$(all)
-	cd tests && cargo test
+	cd tests && cargo test --release
 
 
 $(NAME):	$(OBJS)
