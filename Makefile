@@ -14,6 +14,11 @@ AR					=	ar rcs
 .PHONY:	all
 all:	$(NAME)
 
+.PHONY: test
+test:	$(all)
+	cd tests && cargo test
+
+
 $(NAME):	$(OBJS)
 		$(RM) $(NAME)
 		$(AR) $(NAME) $(OBJS)
