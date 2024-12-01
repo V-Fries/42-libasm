@@ -1,6 +1,8 @@
 use std::process::Command;
 
 fn main() {
+    println!("cargo:rerun-if-changed=../libasm.a");
+
     let output = Command::new("make")
         .current_dir("..")
         .output()

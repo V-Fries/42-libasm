@@ -15,8 +15,8 @@ AR					=	ar rcs
 all:	$(NAME)
 
 .PHONY: test
-test:	$(all)
-	cd tests && cargo test --release
+test:	all
+	cd tests && cargo test --release -- --nocapture
 
 
 $(NAME):	$(OBJS)
@@ -34,6 +34,10 @@ fclean:	clean
 .PHONY:	re
 re:		fclean
 		$(MAKE) all
+
+.PHONY:	re_test
+re_test:	fclean
+		$(MAKE) test
 
 $(BUILD_ROOT)%.o : $(SRC_PATH)%.s
 		@mkdir -p $(shell dirname $@)

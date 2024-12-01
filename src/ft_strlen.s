@@ -1,5 +1,5 @@
+; size_t'rax' ft_strlen(const char* str'rdi');
 global ft_strlen
-; size_t ft_strlen(const char* str);
 ft_strlen:
     cmp byte [rdi], 0
     jz .return_zero
