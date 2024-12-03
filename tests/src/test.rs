@@ -1,5 +1,13 @@
 use std::ffi::{c_char, CStr};
 
+
+#[link(name = "c", kind = "dylib")]
+extern "C" {
+    #[allow(dead_code)]
+    pub fn strcmp(str1: *const c_char, str2: *const c_char) -> i32;
+}
+
+#[allow(clippy::missing_safety_doc)]
 pub unsafe fn assert_cstr_eq(str1: *const c_char, str2: *const c_char) {
     let mut str1_cursor = str1;
     let mut str2_cursor = str2;

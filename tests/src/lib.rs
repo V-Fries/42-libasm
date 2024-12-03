@@ -3,6 +3,7 @@ use std::ffi::c_void;
 mod ft_strcpy;
 mod ft_strdup;
 mod ft_strlen;
+mod ft_strcmp;
 #[cfg(test)]
 pub mod test;
 
