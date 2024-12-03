@@ -21,10 +21,10 @@ ft_strdup:
     pop rsi ; Clean stack and set arg for ft_strcpy
 
     test rax, rax
-    jnz .copy
+    jnz .malloc_success
     ret
 
-.copy
+.malloc_success:
     mov rdi, rax
     jmp ft_strcpy
 

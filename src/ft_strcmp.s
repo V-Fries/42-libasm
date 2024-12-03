@@ -23,11 +23,9 @@ ft_strcmp:
 .return:
     ret
 
-.return_negative
+.return_negative:
     mov eax, -1
     ret
-.return_positive
+.return_positive:
     mov eax, 1
     ret
-
-
