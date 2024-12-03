@@ -6,7 +6,7 @@ SRC_PATH			=	src/
 OBJS				=	$(patsubst %.s, $(BUILD_ROOT)%.o, $(SRC))
 
 RM					=	rm -rf
-NASM				=	nasm -f elf64
+NASM				=	nasm -f elf64 -Werror -Wall
 AR					=	ar rcs
 
 # TODO recompile on dependency change

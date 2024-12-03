@@ -19,7 +19,7 @@ mod test {
             assert_ne!(dup, std::ptr::null_mut());
             let expected = unsafe { std::ffi::CStr::from_ptr(dup).to_owned() };
 
-            unsafe { crate::free(dup.cast()) }
+            unsafe { crate::libc::free(dup.cast()) }
 
             assert_eq!(str, expected);
         };
