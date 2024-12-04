@@ -6,7 +6,7 @@ use super::FtList;
 #[link(name = "asm", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
-    fn ft_list_push_front(head: *mut *mut FtList, data: *mut c_void);
+    pub fn ft_list_push_front(head: *mut *mut FtList, data: *mut c_void);
 }
 
 #[cfg(test)]

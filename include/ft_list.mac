@@ -4,20 +4,5 @@ struc t_list
     .size_of: resb 1
 endstruc
 
-%macro t_list_set_data 2
-    mov qword [%1 + t_list.data], %2
-%endmacro
-
-%macro t_list_set_next 2
-    mov qword [%1 + t_list.next], %2
-%endmacro
-
-
-
-%macro t_list_get_data 2
-    mov %1, qword [%2 + t_list.data]
-%endmacro
-
-%macro t_list_get_next 2
-    mov %1, qword [%2 + t_list.next]
-%endmacro
+%define t_list_data(ptr) qword [ptr + t_list.data]
+%define t_list_next(ptr) qword [ptr + t_list.next]

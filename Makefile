@@ -12,7 +12,7 @@ INCLUDES			=	$(addprefix -I , $(DIR_INCLUDES))
 RM					=	rm -rf
 NASM				=	nasm 
 DEPS_FLAGS			=	-MD -MP
-NASM_FLAGS			=	-f elf64 -Werror -Wall $(DEPS_FLAGS) $(INCLUDES)
+NASM_FLAGS			=	-f elf64 -Werror -Wall -g $(DEPS_FLAGS) $(INCLUDES)
 AR					=	ar rcs
 
 
@@ -21,7 +21,7 @@ all:	$(NAME)
 
 .PHONY: test
 test:	all
-	cd tests && cargo test --release -- --nocapture
+	cd tests && RUSTFLAGS=-Zsanitizer=address cargo +nightly test -- --nocapture
 
 
 $(NAME):	$(OBJS)

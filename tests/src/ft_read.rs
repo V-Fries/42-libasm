@@ -10,7 +10,12 @@ extern "C" {
 #[cfg(test)]
 mod test {
     use super::*;
-    use std::{fs::{remove_file, File}, io::Write, os::fd::AsRawFd, ptr::null_mut};
+    use std::{
+        fs::{remove_file, File},
+        io::Write,
+        os::fd::AsRawFd,
+        ptr::null_mut,
+    };
 
     const TEST_FILE: &str = "ft_read_test.txt";
 
@@ -46,6 +51,6 @@ mod test {
     #[test]
     fn read_errno_change() {
         assert_eq!(unsafe { ft_read(-1, null_mut(), 0) }, -1);
-        assert_eq!(unsafe { *crate::test:: __errno_location() }, 9);
+        assert_eq!(unsafe { *crate::test::__errno_location() }, 9);
     }
 }

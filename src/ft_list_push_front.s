@@ -19,8 +19,8 @@ ft_list_push_front:
     jz .return
 
     mov r10, [rdi]
-    t_list_set_next rax, r10
-    t_list_set_data rax, rsi
+    mov t_list_next(rax), r10
+    mov t_list_data(rax), rsi
     mov [rdi], rax
 
 .return:
