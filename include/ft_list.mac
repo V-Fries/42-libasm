@@ -11,3 +11,13 @@ endstruc
 %macro t_list_set_next 2
     mov qword [%1 + t_list.next], %2
 %endmacro
+
+
+
+%macro t_list_get_data 2
+    mov %1, qword [%2 + t_list.data]
+%endmacro
+
+%macro t_list_get_next 2
+    mov %1, qword [%2 + t_list.next]
+%endmacro
