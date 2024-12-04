@@ -1,2 +1,4 @@
 .build/
 libasm.a
+*.o
+*.d

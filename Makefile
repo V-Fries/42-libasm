@@ -4,12 +4,17 @@ NAME				=	libasm.a
 include src.mk
 SRC_PATH			=	src/
 OBJS				=	$(patsubst %.s, $(BUILD_ROOT)%.o, $(SRC))
+DEPS				=	$(patsubst %.s, $(BUILD_ROOT)%.o.d, $(SRC))
+
+DIR_INCLUDES		=	include/
+INCLUDES			=	$(addprefix -I , $(DIR_INCLUDES))
 
 RM					=	rm -rf
-NASM				=	nasm -f elf64 -Werror -Wall
+NASM				=	nasm 
+DEPS_FLAGS			=	-MD -MP
+NASM_FLAGS			=	-f elf64 -Werror -Wall $(DEPS_FLAGS) $(INCLUDES)
 AR					=	ar rcs
 
-# TODO recompile on dependency change
 
 .PHONY:	all
 all:	$(NAME)
@@ -39,6 +44,7 @@ re:		fclean
 re_test:	fclean
 		$(MAKE) test
 
+-include $(DEPS)
 $(BUILD_ROOT)%.o : $(SRC_PATH)%.s
 		@mkdir -p $(shell dirname $@)
-		$(NASM) $< -o $@
+		$(NASM) $(NASM_FLAGS) $< -o $@

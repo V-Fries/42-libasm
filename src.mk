@@ -3,4 +3,5 @@ SRC=\
 	ft_strcpy.s \
 	ft_strdup.s \
 	ft_strcmp.s \
-	ft_read.s
+	ft_read.s \
+	ft_list_push_front.s

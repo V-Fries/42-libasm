@@ -1,0 +1,13 @@
+struc t_list
+    .data: resq 1
+    .next: resq 1
+    .size_of: resb 1
+endstruc
+
+%macro t_list_set_data 2
+    mov qword [%1 + t_list.data], %2
+%endmacro
+
+%macro t_list_set_next 2
+    mov qword [%1 + t_list.next], %2
+%endmacro

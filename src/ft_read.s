@@ -3,7 +3,7 @@ global ft_read
 ft_read:
     xor rax, rax
     syscall
-    test rax, rax  
+    test rax, rax
     js .handle_errno
     ret
 
