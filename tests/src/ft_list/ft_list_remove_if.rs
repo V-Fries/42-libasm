@@ -2,6 +2,8 @@ use std::ffi::c_void;
 
 use super::FtList;
 
+#[link(name = "c", kind = "dylib")]
+#[link(name = "asm", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_list_remove_if(
@@ -16,7 +18,7 @@ extern "C" {
 mod test {
     use std::{ptr, sync::Mutex};
 
-    use crate::ft_list::{ft_list_push_front::ft_list_push_front, list_destroy};
+    use crate::ft_list::ft_list_push_front::ft_list_push_front;
 
     use super::*;
 

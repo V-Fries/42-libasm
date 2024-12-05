@@ -1,6 +1,7 @@
 mod ft_list_push_front;
 mod ft_list_remove_if;
 mod ft_list_size;
+mod ft_list_sort;
 
 use std::ffi::c_void;
 

@@ -12,7 +12,7 @@ INCLUDES			=	$(addprefix -I , $(DIR_INCLUDES))
 RM					=	rm -rf
 NASM				=	nasm 
 DEPS_FLAGS			=	-MD -MP
-NASM_FLAGS			=	-f elf64 -Werror -Wall -g $(DEPS_FLAGS) $(INCLUDES)
+NASM_FLAGS			=	-f elf64 -Werror -Wall -gdwarf $(DEPS_FLAGS) $(INCLUDES)
 AR					=	ar rcs
 
 

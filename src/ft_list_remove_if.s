@@ -12,6 +12,8 @@ struc vars
     .previous_node: resq 1; t_list*
     .cursor: resq 1; t_list*
 
+    .padding_for_stack_alignment: resq 1
+
     .size_of: resb 1
 endstruc
 
