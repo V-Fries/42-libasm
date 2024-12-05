@@ -9,8 +9,8 @@ ft_list_size:
     jz .return
 
 .loop:
-    mov rdi, t_list_next(rdi)
     inc eax
+    mov rdi, t_list_next(rdi)
     test rdi, rdi
     jnz .loop
 

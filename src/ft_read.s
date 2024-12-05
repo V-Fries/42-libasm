@@ -8,13 +8,13 @@ ft_read:
     ret
 
 .handle_errno:
+    push r12
     mov r12d, eax
     neg r12d
-    sub rsp, 8 ; Align stack for function call
     call __errno_location wrt ..plt
     mov dword [rax], r12d
     mov rax, -1
-    add rsp, 8
+    pop r12
     ret
 
 extern __errno_location
