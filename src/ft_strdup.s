@@ -1,3 +1,4 @@
+;;; str MUST be a valid nul terminated string
 ; char*'rax' ft_strdup(const char* str'rdi');
 global ft_strdup
 ft_strdup:

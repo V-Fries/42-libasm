@@ -1,1 +1,6 @@
+%ifndef UTILS_MAC
+    %define UTILS_MAC
+
 %define NULL qword 0
+
+%endif

@@ -5,6 +5,8 @@
     sub eax, r11d
 %endmacro
 
+;;; s1 MUST be a valid nul terminated string
+;;; s2 MUST be a valid nul terminated string
 ; int'eax'	ft_strcmp(const char *s1'rdi', const char *s2'rsi')
 global ft_strcmp
 ft_strcmp:

@@ -1,3 +1,4 @@
+;;; str MUST be a valid nul terminated string
 ; size_t'rax' ft_strlen(const char* str'rdi');
 global ft_strlen
 ft_strlen:

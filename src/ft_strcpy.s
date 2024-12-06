@@ -3,6 +3,8 @@
     mov byte [%1], r10b
 %endmacro
 
+;;; dest MUST be a valid pointer with size > than src.len() + 1
+;;; src MUST be a valid nul terminated string
 ; char*'rax' ft_strcpy(char* dest'rdi', const char* src'rsi');
 global ft_strcpy
 ft_strcpy:
