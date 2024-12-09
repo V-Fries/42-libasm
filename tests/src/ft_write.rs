@@ -1,7 +1,7 @@
 use std::ffi::c_void;
 
 #[link(name = "c", kind = "dylib")]
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_write(fd: i32, buf: *const c_void, count: usize) -> isize;

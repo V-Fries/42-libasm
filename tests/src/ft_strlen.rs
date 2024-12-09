@@ -1,6 +1,6 @@
 use std::ffi::c_char;
 
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_strlen(str: *const c_char) -> usize;

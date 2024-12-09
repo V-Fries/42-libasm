@@ -3,7 +3,7 @@ use std::ffi::c_void;
 use super::FtList;
 
 #[link(name = "c", kind = "dylib")]
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     pub fn ft_list_push_front(head: *mut *mut FtList, data: *mut c_void);

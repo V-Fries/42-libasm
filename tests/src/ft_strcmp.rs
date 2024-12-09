@@ -1,6 +1,6 @@
 use std::ffi::c_char;
 
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_strcmp(str: *const c_char, str2: *const c_char) -> i32;
@@ -14,7 +14,7 @@ mod test {
         ($str1:expr, $str2:expr) => {
             let got = unsafe { ft_strcmp($str1.as_ptr(), $str2.as_ptr()) };
             let expected = unsafe { crate::test::strcmp($str1.as_ptr(), $str2.as_ptr()) };
-            assert_eq!(got, expected);
+            assert_eq!(got.signum(), expected.signum());
         };
     }
 

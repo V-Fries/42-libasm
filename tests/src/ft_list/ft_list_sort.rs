@@ -2,7 +2,7 @@ use std::ffi::c_void;
 
 use super::FtList;
 
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_list_sort(

@@ -1,7 +1,7 @@
 use std::ffi::c_char;
 
 #[link(name = "c", kind = "dylib")]
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_strdup(str: *const c_char) -> *mut c_char;

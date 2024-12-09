@@ -1,6 +1,6 @@
 use std::ffi::c_char;
 
-#[link(name = "asm", kind = "static")]
+#[link(name = "asm_bonus", kind = "static")]
 extern "C" {
     #[allow(dead_code)]
     fn ft_atoi_base(str: *const c_char, base: *const c_char) -> i32;

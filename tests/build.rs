@@ -1,9 +1,10 @@
 use std::process::Command;
 
 fn main() {
-    println!("cargo:rerun-if-changed=../libasm.a");
+    println!("cargo:rerun-if-changed=../libasm_bonus.a");
 
     let output = Command::new("make")
+        .arg("bonus")
         .current_dir("..")
         .output()
         .expect("failed to run make");
